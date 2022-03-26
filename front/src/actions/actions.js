@@ -1,10 +1,7 @@
-export const obtenerCodigos = (parametros) => {
-  console.log("action obtener codigos")
-    return {
-    type: "OBTENER_CODIGOS",
-    payload: parametros,
-  };
-};
+export const obtenerCodigos = (parametros) => ({
+  type: "OBTENER_CODIGOS",
+  payload: parametros,
+});
 
 export const obtenerCodigosExitosamente = (respuesta) => ({
   type: "OBTENER_CODIGOS_EXITOSAMENTE",

@@ -42,6 +42,7 @@ const Form = ({ obtenerCodigos }) => {
             type="text"
             name="cantidadCodigos"
             placeholder="Cantidad de códigos"
+            value={codigos}
             onChange={(e) => setCodigos(e.target.value)}
           />
         </div>
@@ -50,6 +51,7 @@ const Form = ({ obtenerCodigos }) => {
             type="text"
             name="caracteresCodigo"
             placeholder="Caracteres por código"
+            value={caracteres}
             onChange={(e) => setCaracteres(e.target.value)}
           />
         </div>

@@ -1,0 +1,54 @@
+
+
+.form-group{
+    position: relative;
+    margin-top: 1rem;
+    height: min-content;
+    margin-bottom: 1rem;
+    padding: 0.375rem 0.75rem;
+}
+
+.form {
+    padding: 1.5rem;
+    display: block;
+}
+
+.form-container{
+    max-width: 25rem;
+    border:1px solid rgb(0 0 0 /25%);
+    border-radius: 10px;
+    display: block;
+    min-width: 10rem;
+    font-size: 1rem;
+    color: #212529;
+    background-color: #998f8f;
+    text-align: left;
+    padding: 0.5rem 0;
+    margin: 0.125rem 0 0;
+    background-clip: padding-box ;
+}
+
+.input{
+    width: 100%;
+    font-size: 0.8rem;
+    background-color: #eaf1f8;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 8px;
+}
+
+.btn{
+    cursor:pointer;
+    width: 100%;
+    border: 1px solid;
+    background-color: #343333;
+    color: #fff;
+    border-color: #343333;
+    border-radius: 8px;
+    padding: 0.375rem 0.75rem;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: center;
+    vertical-align: middle;
+}

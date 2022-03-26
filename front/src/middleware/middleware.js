@@ -8,7 +8,6 @@ const obtenerCodigosFlujo =
     next(action);
     if (action.type === "OBTENER_CODIGOS") {
       try {
-          console.log("en el middleware")
         const respuesta = await api.cargarCodigos(action.payload);
         dispatch(obtenerCodigosExitosamente(respuesta));
       } catch (error) {}

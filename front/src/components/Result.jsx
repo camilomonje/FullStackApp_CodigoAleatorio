@@ -2,11 +2,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import uuid from 'react-uuid';
+import "../styles/Result.css"
 
 const Result = ({codigos}) => {
     return (
         <div>
-            <ul>
+            <ul className='lista'>
                 {codigos.map((item)=> {
                    return(
                        <li key={uuid()}>
@@ -24,7 +25,6 @@ const mapStateToProps = (state) => {
     var lista = [];
     if(state.codigos.codigo) {
         lista = state.codigos.codigo.split(",")
-        console.log(lista)
     }
     return {
     codigos: lista

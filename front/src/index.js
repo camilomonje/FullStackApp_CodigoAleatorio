@@ -2,8 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import App from "./App";
-import {configureStore} from "./store/store"
 import api from "./api/api"
+import { configureStore } from "./store";
 
 ReactDOM.render(
   <Provider store={configureStore({api})}>

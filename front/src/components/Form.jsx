@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import { obtenerCodigos } from "../actions/actions";
+import "../styles/Form.css"
 
 const Form = ({ obtenerCodigos }) => {
   const [codigos, setCodigos] = useState();
@@ -29,33 +30,34 @@ const Form = ({ obtenerCodigos }) => {
       lowerCase: esMinusculas,
     };
 
-    console.log(objeto);
     obtenerCodigos(objeto);
     limpiarFormulario();
   };
 
   return (
-    <div>
-      <form onSubmit={onSubmit}>
-        <div>
+    <div className='form-container'>
+      <form className='form' onSubmit={onSubmit}>
+        <div className='form-group'>
           <input
-            type="text"
+            className="input"
+            type="number"
             name="cantidadCodigos"
             placeholder="Cantidad de códigos"
             value={codigos}
             onChange={(e) => setCodigos(e.target.value)}
           />
         </div>
-        <div>
+        <div className='form-group'>
           <input
-            type="text"
+          className="input"
+            type="number"
             name="caracteresCodigo"
             placeholder="Caracteres por código"
             value={caracteres}
             onChange={(e) => setCaracteres(e.target.value)}
           />
         </div>
-        <div>
+        <div className='form-group'>
           <label>
             <input
               type="checkbox"
@@ -84,8 +86,8 @@ const Form = ({ obtenerCodigos }) => {
             Minusculas
           </label>
         </div>
-        <div>
-          <button type="submit" disabled={validarBoton()}>
+        <div className="form-group">
+          <button className="btn" type="submit" disabled={validarBoton()}>
             Generar codigos
           </button>
         </div>

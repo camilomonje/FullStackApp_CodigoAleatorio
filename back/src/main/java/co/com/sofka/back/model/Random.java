@@ -3,6 +3,7 @@ package co.com.sofka.back.model;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
+import java.util.List;
 
 import org.springframework.data.annotation.Id;
 
@@ -40,10 +41,4 @@ public class Random {
     public void setCodigo(String codigo) {
         this.codigo = codigo;
     }
-
-
-    
-
-
-    
 }

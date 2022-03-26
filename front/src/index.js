@@ -1,12 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import App from "./App";
+import {configureStore} from "./store/store"
+import api from "./api/api"
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={configureStore({api})}>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </Provider>,
+
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function

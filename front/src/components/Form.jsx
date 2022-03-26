@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { obtenerCodigos } from "../actions/actions";
 
-const Form = () => {
+const Form = ({ obtenerCodigos }) => {
   const [codigos, setCodigos] = useState();
   const [caracteres, setCaracteres] = useState();
   const [esNumericos, setEsNumericos] = useState(true);
@@ -11,18 +14,25 @@ const Form = () => {
     return !(esNumericos || esMayusculas || esMinusculas);
   };
 
+  const limpiarFormulario = () => {
+    setCodigos("");
+    setCaracteres("");
+  };
+
   const onSubmit = (event) => {
     event.preventDefault();
     var objeto = {
-      cantidadDeCaracteres : caracteres,
+      caracteres: caracteres,
       cantidadDeCodigos: codigos,
-      numeric : esNumericos,
-      upperCase : esMayusculas,
-      lowerCase : esMinusculas,
+      numeric: esNumericos,
+      upperCase: esMayusculas,
+      lowerCase: esMinusculas,
     };
-    console.log(objeto);
-  };
 
+    console.log(objeto);
+    obtenerCodigos(objeto);
+    limpiarFormulario();
+  };
 
   return (
     <div>
@@ -82,4 +92,13 @@ const Form = () => {
   );
 };
 
-export default Form;
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators(
+    {
+      obtenerCodigos,
+    },
+    dispatch
+  );
+};
+
+export default connect(null, mapDispatchToProps)(Form);
